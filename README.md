@@ -5,7 +5,7 @@
 # Getting started 
 
 ## Deployed App Link
-https://samb-inventory-app-8f8252ac4320.herokuapp.com/
+> https://samb-inventory-app-8f8252ac4320.herokuapp.com/
 
 ## How to run project locally
 
