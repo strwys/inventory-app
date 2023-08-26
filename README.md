@@ -7,9 +7,11 @@
 ## Deployed App Link
 > https://samb-inventory-app-8f8252ac4320.herokuapp.com/
 
+health-check
+> https://samb-inventory-app-8f8252ac4320.herokuapp.com/api/health-check
+
 ## How to run project locally
 
- Clone the project
 ```bash
  
 # Clone the project
