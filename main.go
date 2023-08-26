@@ -43,7 +43,7 @@ func main() {
 
 	// Starting server
 	go func() {
-		err := e.Start(":8080")
+		err := e.Start(":" + cfg.App.HTTPPort)
 		if err != nil {
 			logger.Log.Error("error starting server: ", err)
 		}
