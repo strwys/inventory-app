@@ -9,6 +9,9 @@ import (
 	"time"
 
 	"github.com/cecepsprd/inventory-app/config"
+	"github.com/cecepsprd/inventory-app/handler"
+	"github.com/cecepsprd/inventory-app/repository"
+	"github.com/cecepsprd/inventory-app/service"
 	"github.com/cecepsprd/inventory-app/utils/logger"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
@@ -29,11 +32,7 @@ func main() {
 		AllowOrigins: []string{"*"},
 		AllowMethods: []string{
 			http.MethodGet,
-			http.MethodHead,
-			http.MethodPut,
-			http.MethodPatch,
 			http.MethodPost,
-			http.MethodDelete,
 		},
 	}))
 
@@ -52,6 +51,10 @@ func main() {
 			logger.Log.Error("error starting server: ", err)
 		}
 	}()
+
+	inventoryRepo := repository.NewInventoryRepository(db)
+	inventoryService := service.NewInventoryService(inventoryRepo)
+	handler.NewInventoryHandler(e, inventoryService)
 
 	quit := make(chan os.Signal, 1)
 	signal.Notify(quit, os.Interrupt)

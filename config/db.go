@@ -16,8 +16,6 @@ func (cfg Config) MysqlConnect() (*sql.DB, error) {
 		cfg.MysqlDB.Name,
 	)
 
-	fmt.Println("-->", dbConnString)
-
 	db, err := sql.Open("mysql", dbConnString)
 	if err != nil {
 		return nil, err
