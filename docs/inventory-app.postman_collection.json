@@ -1,0 +1,67 @@
+{
+	"info": {
+		"_postman_id": "b862a165-1d35-46a8-96c4-0fef5f718e20",
+		"name": "inventory-app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "8458072"
+	},
+	"item": [
+		{
+			"name": "Inventory In",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"warehouse_id\": 1,\n  \"supplier_id\": 1,\n  \"product_id\": 1,\n  \"quantity_dus\": 1,\n  \"quantity_pcs\": 10,\n  \"notes\": \"barang masuk\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/inventory/in"
+			},
+			"response": []
+		},
+		{
+			"name": "Inventory Out",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"warehouse_id\": 1,\n  \"supplier_id\": 1,\n  \"product_id\": 1,\n  \"quantity_dus\": 2,\n  \"quantity_pcs\": 24,\n  \"notes\": \"barang keluar\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/inventory/out"
+			},
+			"response": []
+		},
+		{
+			"name": "Inventory Stock",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"warehouse_id\": 1,\n  \"supplier_id\": 1,\n  \"product_id\": 1,\n  \"quantity_dus\": 1,\n  \"quantity_pcs\": 10,\n  \"notes\": \"barang masuk\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/inventory/report"
+			},
+			"response": []
+		}
+	]
+}
