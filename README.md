@@ -1,6 +1,8 @@
 # Inventory App 
 
-## Getting started 
+![gopher](https://golang.org/doc/gopher/doc.png)
+
+# Getting started 
 
 ## Deployed App Link
 https://samb-inventory-app-8f8252ac4320.herokuapp.com/
