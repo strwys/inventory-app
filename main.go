@@ -43,6 +43,10 @@ func main() {
 
 	// Starting server
 	go func() {
+		if cfg.App.HTTPPort == "" {
+			cfg.App.HTTPPort = os.Getenv("PORT")
+		}
+
 		err := e.Start(":" + cfg.App.HTTPPort)
 		if err != nil {
 			logger.Log.Error("error starting server: ", err)
