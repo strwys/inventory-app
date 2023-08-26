@@ -37,6 +37,10 @@ func main() {
 		},
 	}))
 
+	e.GET("/api/health", func(c echo.Context) error {
+		return c.String(http.StatusOK, "Service OK!")
+	})
+
 	// Starting server
 	go func() {
 		err := e.Start("0.0.0.0:8080")
